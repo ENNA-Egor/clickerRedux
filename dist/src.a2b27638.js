@@ -141,7 +141,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = toPrimitive;
 var _typeof2 = _interopRequireDefault(require("./typeof.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function toPrimitive(t, r) {
   if ("object" != (0, _typeof2.default)(t) || !t) return t;
   var e = t[Symbol.toPrimitive];
@@ -161,10 +161,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = toPropertyKey;
 var _typeof2 = _interopRequireDefault(require("./typeof.js"));
 var _toPrimitive = _interopRequireDefault(require("./toPrimitive.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function toPropertyKey(t) {
   var i = (0, _toPrimitive.default)(t, "string");
-  return "symbol" == (0, _typeof2.default)(i) ? i : String(i);
+  return "symbol" == (0, _typeof2.default)(i) ? i : i + "";
 }
 },{"./typeof.js":"node_modules/@babel/runtime/helpers/esm/typeof.js","./toPrimitive.js":"node_modules/@babel/runtime/helpers/esm/toPrimitive.js"}],"node_modules/@babel/runtime/helpers/esm/defineProperty.js":[function(require,module,exports) {
 "use strict";
@@ -174,20 +174,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _defineProperty;
 var _toPropertyKey = _interopRequireDefault(require("./toPropertyKey.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _defineProperty(obj, key, value) {
-  key = (0, _toPropertyKey.default)(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _defineProperty(e, r, t) {
+  return (r = (0, _toPropertyKey.default)(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
 }
 },{"./toPropertyKey.js":"node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"}],"node_modules/@babel/runtime/helpers/esm/objectSpread2.js":[function(require,module,exports) {
 "use strict";
@@ -197,7 +191,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _objectSpread2;
 var _defineProperty = _interopRequireDefault(require("./defineProperty.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function ownKeys(e, r) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
@@ -232,7 +226,7 @@ exports.combineReducers = combineReducers;
 exports.compose = compose;
 exports.createStore = createStore;
 var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectSpread2"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 /**
  * Adapted from React: https://github.com/facebook/react/blob/master/packages/shared/formatProdErrorMessage.js
  *
@@ -842,7 +836,7 @@ var global = arguments[3];
 
 var _redux = require("redux");
 var _reduxLogger = _interopRequireDefault(require("redux-logger"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 var counter = function counter() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -861,7 +855,7 @@ var middleware = [];
 var myLoger = function myLoger(store) {
   return function (next) {
     return function (action) {
-      console.log('dispatches an fction', action.type);
+      console.log('dispatches an function', action.type);
       next(action);
       console.log('update state is', store.getState());
     };
@@ -931,7 +925,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57743" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52326" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

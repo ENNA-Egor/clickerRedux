@@ -18,7 +18,7 @@ const middleware = [];
 
 
 const myLoger =(store) => (next) =>  (action) => {
-  console.log ('dispatches an fction', action.type);
+  console.log ('dispatches an function', action.type);
   next (action);
   console.log ('update state is', store.getState());
 }
