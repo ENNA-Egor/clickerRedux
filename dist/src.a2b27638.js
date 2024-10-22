@@ -851,6 +851,7 @@ var counter = function counter() {
       return state;
   }
 };
+var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _redux.compose;
 var middleware = [];
 var myLoger = function myLoger(store) {
   return function (next) {
@@ -864,7 +865,7 @@ var myLoger = function myLoger(store) {
 if ("development" === 'development') {
   middleware.push(_reduxLogger.default, myLoger);
 }
-var store = (0, _redux.createStore)(counter, _redux.applyMiddleware.apply(void 0, middleware));
+var store = (0, _redux.createStore)(counter, composeEnhancers(_redux.applyMiddleware.apply(void 0, middleware)));
 var increment = {
   type: "INCREMENT"
 };
@@ -925,7 +926,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52326" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53149" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

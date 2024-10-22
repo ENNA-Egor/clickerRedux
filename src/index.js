@@ -1,4 +1,5 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware/*, compose*/ } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
 
 const counter = (state = 0, action) => {
@@ -14,6 +15,8 @@ const counter = (state = 0, action) => {
   }
 };
 
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const middleware = [];
 
 
@@ -26,7 +29,8 @@ const myLoger =(store) => (next) =>  (action) => {
 if (process.env.NODE_ENV === 'development'){
   middleware.push (logger, myLoger);
 }
-const store = createStore(counter, applyMiddleware(...middleware));
+// const store = createStore(counter, composeEnhancers(applyMiddleware(...middleware)));
+const store = createStore(counter, composeWithDevTools(applyMiddleware(...middleware)));
 
 const increment = {
   type: "INCREMENT"
